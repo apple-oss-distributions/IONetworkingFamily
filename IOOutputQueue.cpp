@@ -3,22 +3,19 @@
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
- * Copyright (c) 1999-2003 Apple Computer, Inc.  All Rights Reserved.
+ * The contents of this file constitute Original Code as defined in and
+ * are subject to the Apple Public Source License Version 1.1 (the
+ * "License").  You may not use this file except in compliance with the
+ * License.  Please obtain a copy of the License at
+ * http://www.apple.com/publicsource and read it before using this file.
  * 
- * This file contains Original Code and/or Modifications of Original Code
- * as defined in and that are subject to the Apple Public Source License
- * Version 2.0 (the 'License'). You may not use this file except in
- * compliance with the License. Please obtain a copy of the License at
- * http://www.opensource.apple.com/apsl/ and read it before using this
- * file.
- * 
- * The Original Code and all software distributed under the License are
- * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * This Original Code and all software distributed under the License are
+ * distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
- * Please see the License for the specific language governing rights and
- * limitations under the License.
+ * FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT.  Please see the
+ * License for the specific language governing rights and limitations
+ * under the License.
  * 
  * @APPLE_LICENSE_HEADER_END@
  */
@@ -323,7 +320,7 @@ void IOBasicOutputQueue::serviceThread(void * param)
 // Add a single packet, or a chain of packets, to the queue object.
 // This method can support multiple clients threads.
 
-UInt32 IOBasicOutputQueue::enqueue(struct mbuf * m, void * param)
+UInt32 IOBasicOutputQueue::enqueue(mbuf_t m, void * param)
 {
     bool success;
 
@@ -425,7 +422,7 @@ void IOBasicOutputQueue::dequeue()
 
 void IOBasicOutputQueue::output(IOMbufQueue * queue, UInt32 * state)
 {
-    struct mbuf * pkt;
+    mbuf_t pkt;
     UInt32        status;
 
     do {
@@ -525,7 +522,7 @@ bool IOBasicOutputQueue::stop()
     
     QUEUE_UNLOCK;
 
-    thread_block((void (*)(void)) 0);
+    thread_block((void (*)(void*, int)) 0);
 
     return wasRunning;
 }
@@ -574,12 +571,12 @@ bool IOBasicOutputQueue::service(UInt32 options)
 UInt32 IOBasicOutputQueue::flush()
 {
     UInt32 flushCount;
-
+	mbuf_t m;
     QUEUE_LOCK;
-    flushCount = IOMbufFree( IOMbufQueueDequeueAll( _inQueue ) );
-    OSAddAtomic(flushCount, (SInt32 *) &_stats->dropCount);
+    m = IOMbufQueueDequeueAll( _inQueue );
     QUEUE_UNLOCK;
-
+    flushCount = IOMbufFree(m); 
+	OSAddAtomic(flushCount, (SInt32 *) &_stats->dropCount);
     return flushCount;
 }
 
@@ -787,7 +784,9 @@ void IOGatedOutputQueue::free()
 
     if (_gate)
     {
-        _gate->release();
+        IOWorkLoop *wl = _gate->getWorkLoop();
+		if(wl) wl->removeEventSource(_gate);
+		_gate->release();
         _gate = 0;
     }
 
@@ -810,7 +809,7 @@ void IOGatedOutputQueue::gatedOutput(OSObject *          /* owner */,
                                      IOMbufQueue *        queue,
                                      UInt32 *             state)
 {
-    struct mbuf * pkt;
+    mbuf_t pkt;
     UInt32        status;
 
     do {
