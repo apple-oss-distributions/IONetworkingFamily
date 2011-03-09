@@ -1130,7 +1130,7 @@ IOEthernetInterface::controllerWillChangePowerState(
     {
         _controllerLostPower = true;
 
-        if (_ctrEnabled)
+        if (_ctrEnabled && !ctr->isInactive())
         {
             if (policyMaker)
             {
@@ -1203,7 +1203,8 @@ IOEthernetInterface::controllerDidChangePowerState(
         // perhaps enable the controller, restore all Ethernet controller
         // state, then mark the interface as Running.
 
-        syncSIOCSIFFLAGS(ctr);
+        if (!ctr->isInactive())
+            syncSIOCSIFFLAGS(ctr);
     }
 
     return ret;
@@ -1313,7 +1314,7 @@ void IOEthernetInterface::_fixupVlanPacket(mbuf_t mt, u_int16_t vlan_tag, int in
 	size_t copyBytes = 0;  //initialize to prevent annoying, incorrect warning that it's used uninitialized
 	char * destptr;
 	
-	if( mbuf_gethdr(M_DONTWAIT, MT_DATA, &newmb) )
+	if( mbuf_gethdr(MBUF_DONTWAIT, MT_DATA, &newmb) )
 		return;
 		
 	//init enough of the mbuf to keep bpf happy
@@ -1403,10 +1404,19 @@ bool IOEthernetInterface::inputEvent( UInt32 type, void * data )
         (type == kIONetworkEventTypeLinkDown) ||
         (type == kIONetworkEventWakeOnLANSupportChanged))
     {
-        // reportInterfaceWakeFlags() callout
-        retain();
-        if (thread_call_enter( _inputEventThreadCall ) == TRUE)
-            release();
+        IONetworkController * ctr = getController();
+
+        if (ctr && !ctr->isInactive())
+        {
+            // reportInterfaceWakeFlags() callout
+            retain();
+            ctr->retain();
+            if (thread_call_enter( _inputEventThreadCall ) == TRUE)
+            {
+                release();
+                ctr->release();
+            }
+        }
     }
 
     return super::inputEvent(type, data);
@@ -1422,7 +1432,9 @@ void IOEthernetInterface::handleEthernetInputEvent(
     if (me)
     {
         ctr = me->getController();
-        if (ctr) ctr->executeCommand(
+        if (ctr)
+        {
+            ctr->executeCommand(
             me,     /* client */
                     /* action */
             OSMemberFunctionCast(
@@ -1430,6 +1442,8 @@ void IOEthernetInterface::handleEthernetInputEvent(
                 &IOEthernetInterface::reportInterfaceWakeFlags),
             me );   /* target */
 
+            ctr->release();
+        }
         me->release();
     }
 }
