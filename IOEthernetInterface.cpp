@@ -34,6 +34,7 @@
 #include <IOEthernetController.h>
 #include "IONetworkUserClient.h"
 #include "IONetworkDebug.h"
+#include "IONetworkControllerPrivate.h"
 
 #include <IOKit/pwr_mgt/RootDomain.h>	// publishFeature()
 
@@ -97,6 +98,7 @@ enum {
 #define _publishedFeatureID     _reserved->publishedFeatureID
 #define _supportedWakeFilters   _reserved->supportedWakeFilters
 #define _disabledWakeFilters    _reserved->disabledWakeFilters
+#define _wompEnabledAssertionID _reserved->wompEnabledAssertionID
 
 #define kWOMPFeatureKey         "WakeOnMagicPacket"
 
@@ -307,6 +309,12 @@ void IOEthernetInterface::free()
 
 	if ( _reserved )
 	{
+        if (kIOPMUndefinedDriverAssertionID != _wompEnabledAssertionID)
+        {
+            getPMRootDomain()->releasePMAssertion(_wompEnabledAssertionID);
+            _wompEnabledAssertionID = kIOPMUndefinedDriverAssertionID;
+        }
+
         if (_disabledWakeFilters)
         {
             _disabledWakeFilters->release();
@@ -387,8 +395,7 @@ bool IOEthernetInterface::controllerDidOpen(IONetworkController * ctr)
 
         addr = (IOEthernetAddress *) addrData->getBytesNoCopy();
 
-#if 1   // Print the address
-        IOLog("%s: Ethernet address %02x:%02x:%02x:%02x:%02x:%02x\n",
+        DLOG("%s: Ethernet address %02x:%02x:%02x:%02x:%02x:%02x\n",
               ctr->getName(),
               addr->bytes[0],
               addr->bytes[1],
@@ -396,8 +403,7 @@ bool IOEthernetInterface::controllerDidOpen(IONetworkController * ctr)
               addr->bytes[3],
               addr->bytes[4],
               addr->bytes[5]);
-#endif
-        
+
         ret = true;
     }
     while (0);
@@ -1322,6 +1328,31 @@ bool IOEthernetInterface::inputEvent( UInt32 type, void * data )
         }
     }
 
+    if ((type == kIONetworkEventTypeLinkUp) ||
+        (type == kIONetworkEventTypeLinkDown))
+    {
+        ifnet_t ifp = getIfnet();
+        const IONetworkLinkEventData * linkData =
+            (const IONetworkLinkEventData *) data;
+
+        if (ifp && linkData)
+        {
+            if ((IOMediumGetNetworkType(linkData->linkType) == kIOMediumEthernet))
+            {
+                // Ethernet drivers typically don't report link quality,
+                // do it for them based on link status.
+                if (type == kIONetworkEventTypeLinkUp)
+                {
+                    ifnet_set_link_quality(ifp, IFNET_LQM_THRESH_GOOD);
+                }
+                else
+                {
+                    ifnet_set_link_quality(ifp, IFNET_LQM_THRESH_OFF);
+                }
+            }
+        }
+    }
+
     return super::inputEvent(type, data);
 }
 
@@ -1436,5 +1467,21 @@ void IOEthernetInterface::reportInterfaceWakeFlags( IONetworkController * ctr )
     {
         ifnet_set_wake_flags(ifnet, filters, IFNET_WAKE_ON_MAGIC_PACKET);
         DLOG("en%u: ifnet_set_wake_flags = %x\n", getUnitNumber(), filters);
+
+        // Lazy create of kernel assertion
+        if (kIOPMUndefinedDriverAssertionID == _wompEnabledAssertionID)
+        {
+            _wompEnabledAssertionID = getPMRootDomain()->createPMAssertion(
+                kIOPMDriverAssertionMagicPacketWakeEnabledBit,
+                (filters & IFNET_WAKE_ON_MAGIC_PACKET) ?
+                    kIOPMDriverAssertionLevelOn : kIOPMDriverAssertionLevelOff,
+                this, getName());
+        }
+        else
+        {
+            getPMRootDomain()->setPMAssertionLevel(_wompEnabledAssertionID,
+                (filters & IFNET_WAKE_ON_MAGIC_PACKET) ?
+                    kIOPMDriverAssertionLevelOn : kIOPMDriverAssertionLevelOff);
+        }
     }
 }
