@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -115,6 +115,12 @@
 		C17D35410D3FD2D600F185DB /* IONetworkUserClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B91BF3EA00CFE9D308CA29FD /* IONetworkUserClient.cpp */; };
 		C17D35420D3FD2D600F185DB /* IOOutputQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B91BF3EB00CFE9D308CA29FD /* IOOutputQueue.cpp */; };
 		C17D35430D3FD2D600F185DB /* IOPacketQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B91BF3EC00CFE9D308CA29FD /* IOPacketQueue.cpp */; };
+		C4A6AEE423E3A3DF0042D6F7 /* IONetworkControllerPrivate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93FC6B0023527E308CA29FD /* IONetworkControllerPrivate.h */; };
+		C4A6AEE523E3A4470042D6F7 /* IONetworkControllerPrivate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93FC6B0023527E308CA29FD /* IONetworkControllerPrivate.h */; };
+		C4A6AEE623E3A4530042D6F7 /* IONetworkControllerPrivate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93FC6B0023527E308CA29FD /* IONetworkControllerPrivate.h */; };
+		C4A6AEE723E3A4600042D6F7 /* IONetworkControllerPrivate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93FC6B0023527E308CA29FD /* IONetworkControllerPrivate.h */; };
+		C4A6AEE823E3A68D0042D6F7 /* IONetworkControllerPrivate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93FC6B0023527E308CA29FD /* IONetworkControllerPrivate.h */; };
+		C4A6AEE923E3A6A30042D6F7 /* IONetworkControllerPrivate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93FC6B0023527E308CA29FD /* IONetworkControllerPrivate.h */; };
 		D82B9D191416D326008A7864 /* IONetworkController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B91BF3FE00CFEA6808CA29FD /* IONetworkController.h */; };
 		D82B9D1A1416D387008A7864 /* IONetworkInterface.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B91BF40000CFEA6808CA29FD /* IONetworkInterface.h */; };
 		D843BCF416CBEBED00CAC1F0 /* IONetworkTypesPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = D843BCF316CBEBEC00CAC1F0 /* IONetworkTypesPrivate.h */; };
@@ -259,6 +265,7 @@
 			dstPath = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Kernel.framework/Versions/A/PrivateHeaders/IOKit/network";
 			dstSubfolderSpec = 0;
 			files = (
+				C4A6AEE423E3A3DF0042D6F7 /* IONetworkControllerPrivate.h in CopyFiles */,
 				D843BCF616CBEC8000CAC1F0 /* IONetworkTypesPrivate.h in CopyFiles */,
 				D82B9D1A1416D387008A7864 /* IONetworkInterface.h in CopyFiles */,
 				D82B9D191416D326008A7864 /* IONetworkController.h in CopyFiles */,
@@ -313,6 +320,7 @@
 			dstPath = "$(SYSTEM_LIBRARY_DIR)/Frameworks/IOKit.framework/Versions/A/PrivateHeaders/network";
 			dstSubfolderSpec = 0;
 			files = (
+				C4A6AEE523E3A4470042D6F7 /* IONetworkControllerPrivate.h in CopyFiles */,
 				D8E903CC16E137C2004742B3 /* IONetworkTypesPrivate.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
@@ -323,6 +331,7 @@
 			dstPath = "$(SYSTEM_LIBRARY_DIR)/Frameworks/IOKit.framework/Versions/A/PrivateHeaders/network";
 			dstSubfolderSpec = 0;
 			files = (
+				C4A6AEE723E3A4600042D6F7 /* IONetworkControllerPrivate.h in CopyFiles */,
 				D8E903CE16E13856004742B3 /* IONetworkTypesPrivate.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
@@ -333,6 +342,7 @@
 			dstPath = "$(INDIGO_INSTALL_PATH_PREFIX)$(SYSTEM_LIBRARY_DIR)/Frameworks/IOKit.framework/Versions/A/PrivateHeaders/network";
 			dstSubfolderSpec = 0;
 			files = (
+				C4A6AEE923E3A6A30042D6F7 /* IONetworkControllerPrivate.h in CopyFiles */,
 				D8E903D016E13896004742B3 /* IONetworkTypesPrivate.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
@@ -343,6 +353,7 @@
 			dstPath = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Kernel.framework/Versions/A/PrivateHeaders/IOKit/network";
 			dstSubfolderSpec = 0;
 			files = (
+				C4A6AEE623E3A4530042D6F7 /* IONetworkControllerPrivate.h in CopyFiles */,
 				D8FAC6C016CC060A00682264 /* IONetworkTypesPrivate.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
@@ -353,6 +364,7 @@
 			dstPath = "$(INDIGO_INSTALL_PATH_PREFIX)$(SYSTEM_LIBRARY_DIR)/Frameworks/Kernel.framework/Versions/A/PrivateHeaders/IOKit/network";
 			dstSubfolderSpec = 0;
 			files = (
+				C4A6AEE823E3A68D0042D6F7 /* IONetworkControllerPrivate.h in CopyFiles */,
 				D8FAC6C916CC075500682264 /* IONetworkTypesPrivate.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
@@ -360,6 +372,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F380FF924A4105A00999D6D /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
 		3F7B6E161649C1BE00C94C51 /* InstallHeaders_embedded copy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "InstallHeaders_embedded copy"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BF587613CDE92300C7E485 /* IONetworkDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IONetworkDebug.h; sourceTree = "<group>"; };
 		97E070331ED7845C00D5CB40 /* kext.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = kext.xcconfig; sourceTree = "<group>"; };
@@ -422,6 +435,7 @@
 		089C166AFE841209C02AAC07 /* IONetworkingFamily */ = {
 			isa = PBXGroup;
 			children = (
+				3F380FF924A4105A00999D6D /* config */,
 				97E070331ED7845C00D5CB40 /* kext.xcconfig */,
 				247142CAFF3F8F9811CA285C /* Source */,
 				089C167CFE841241C02AAC07 /* Resources */,
@@ -574,6 +588,7 @@
 				C132AA3E0D3FCF980054798D /* ShellScript */,
 				C132AA3F0D3FCF980054798D /* Headers */,
 				C132AA520D3FCF980054798D /* Resources */,
+				3F380FF824A40FED00999D6D /* ShellScript */,
 				C132AA530D3FCF980054798D /* Sources */,
 				C132AA600D3FCF980054798D /* Frameworks */,
 				C132AA610D3FCF980054798D /* Rez */,
@@ -659,17 +674,18 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = DAD9E1EF09D4A8C0006678D2 /* Build configuration list for PBXProject "IONetworkingFamily" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				fr,
+				de,
+				en,
+				ja,
+				Base,
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* IONetworkingFamily */;
 			projectDirPath = "";
@@ -719,6 +735,23 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3F380FF824A40FED00999D6D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "script=\"${SRCROOT}/config/generate-symbols-plist.sh\";\nif [ -x \"$script\" ]; then\n    . \"$script\" ${SYMROOT}/symbolsets.plist ${SRCROOT}/Info.plist ${SRCROOT}/config/IONetworkingFamily.exports\nfi\n\n";
+		};
 		3F7B6E111649C1BE00C94C51 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -739,7 +772,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "script=\"${SYSTEM_DEVELOPER_DIR}/ProjectBuilder Extras/Kernel Extension Support/KEXTPreprocess\";\nif [ -x \"$script\" ]; then\n    . \"$script\"\nfi";
+			shellScript = "script=\"${SYSTEM_DEVELOPER_DIR}/ProjectBuilder Extras/Kernel Extension Support/KEXTPreprocess\";\nif [ -x \"$script\" ]; then\n    . \"$script\"\nfi\n";
 		};
 		C132AA620D3FCF980054798D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -748,7 +781,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "script=\"${SYSTEM_DEVELOPER_DIR}/ProjectBuilder Extras/Kernel Extension Support/KEXTPostprocess\";\nif [ -x \"$script\" ]; then\n    . \"$script\"\nfi";
+			shellScript = "script=\"${SYSTEM_DEVELOPER_DIR}/ProjectBuilder Extras/Kernel Extension Support/KEXTPostprocess\";\nif [ -x \"$script\" ]; then\n    . \"$script\"\nfi\n";
 		};
 		C17D35220D3FD2D600F185DB /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -854,20 +887,21 @@
 		3F7B6E131649C1BE00C94C51 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALLHDRS_COPY_PHASE = YES;
 				INSTALLHDRS_SCRIPT_PHASE = YES;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "InstallHeaders_embedded copy";
 				REZ_EXECUTABLE = YES;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -880,17 +914,18 @@
 		3F7B6E141649C1BE00C94C51 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				INSTALLHDRS_COPY_PHASE = YES;
 				INSTALLHDRS_SCRIPT_PHASE = YES;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "InstallHeaders_embedded copy";
 				REZ_EXECUTABLE = YES;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -903,15 +938,17 @@
 		3F7B6E151649C1BE00C94C51 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				INSTALLHDRS_COPY_PHASE = YES;
 				INSTALLHDRS_SCRIPT_PHASE = YES;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "InstallHeaders_embedded copy";
 				REZ_EXECUTABLE = YES;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -924,18 +961,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97E070331ED7845C00D5CB40 /* kext.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					__PRIVATE_SPI__,
 					"IOASSERT=1",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				KERNEL_MODULE = YES;
@@ -943,12 +980,16 @@
 				MODULE_IOKIT = YES;
 				MODULE_NAME = com.apple.iokit.IONetworkingFamily;
 				MODULE_VERSION = 3.4;
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[sdk=macosx*]" = (
+					"-Wl,-sectcreate,__LINKINFO,__symbolsets,$(SYMROOT)/symbolsets.plist",
+					"-Wl,-segprot,__LINKINFO,r--,r--",
+				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.iokit.IONetworkingFamily;
 				PRODUCT_NAME = IONetworkingFamily;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -963,12 +1004,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97E070331ED7845C00D5CB40 /* kext.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = __PRIVATE_SPI__;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				KERNEL_MODULE = YES;
@@ -976,13 +1017,17 @@
 				MODULE_IOKIT = YES;
 				MODULE_NAME = com.apple.iokit.IONetworkingFamily;
 				MODULE_VERSION = 3.4;
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[sdk=macosx*]" = (
+					"-Wl,-sectcreate,__LINKINFO,__symbolsets,$(SYMROOT)/symbolsets.plist",
+					"-Wl,-segprot,__LINKINFO,r--,r--",
+				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.iokit.IONetworkingFamily;
 				PRODUCT_NAME = IONetworkingFamily;
 				SECTORDER_FLAGS = "";
 				STRIP_INSTALLED_PRODUCT = YES;
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -997,11 +1042,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97E070331ED7845C00D5CB40 /* kext.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = __PRIVATE_SPI__;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				KERNEL_MODULE = YES;
@@ -1009,13 +1055,17 @@
 				MODULE_IOKIT = YES;
 				MODULE_NAME = com.apple.iokit.IONetworkingFamily;
 				MODULE_VERSION = 3.4;
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[sdk=macosx*]" = (
+					"-Wl,-sectcreate,__LINKINFO,__symbolsets,$(SYMROOT)/symbolsets.plist",
+					"-Wl,-segprot,__LINKINFO,r--,r--",
+				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.iokit.IONetworkingFamily;
 				PRODUCT_NAME = IONetworkingFamily;
 				SECTORDER_FLAGS = "";
 				STRIP_INSTALLED_PRODUCT = YES;
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1028,20 +1078,21 @@
 		C132AA890D3FCF980054798D /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALLHDRS_COPY_PHASE = YES;
 				INSTALLHDRS_SCRIPT_PHASE = YES;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "IONetworkingFamily Headers";
 				REZ_EXECUTABLE = YES;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1054,17 +1105,18 @@
 		C132AA8A0D3FCF980054798D /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				INSTALLHDRS_COPY_PHASE = YES;
 				INSTALLHDRS_SCRIPT_PHASE = YES;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "IONetworkingFamily Headers";
 				REZ_EXECUTABLE = YES;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1077,15 +1129,17 @@
 		C132AA8B0D3FCF980054798D /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				INSTALLHDRS_COPY_PHASE = YES;
 				INSTALLHDRS_SCRIPT_PHASE = YES;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "IONetworkingFamily Headers";
 				REZ_EXECUTABLE = YES;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1098,11 +1152,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97E070331ED7845C00D5CB40 /* kext.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1119,12 +1173,12 @@
 				MODULE_IOKIT = YES;
 				MODULE_NAME = com.apple.iokit.IONetworkingFamily;
 				MODULE_VERSION = 3.4;
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.iokit.IONetworkingFamily;
 				PRODUCT_NAME = IONetworkingFamily;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1139,10 +1193,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97E070331ED7845C00D5CB40 /* kext.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = __PRIVATE_SPI__;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_THUMB_SUPPORT = YES;
@@ -1154,12 +1208,12 @@
 				MODULE_IOKIT = YES;
 				MODULE_NAME = com.apple.iokit.IONetworkingFamily;
 				MODULE_VERSION = 3.4;
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.iokit.IONetworkingFamily;
 				PRODUCT_NAME = IONetworkingFamily;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1174,6 +1228,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97E070331ED7845C00D5CB40 /* kext.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -1188,12 +1243,12 @@
 				MODULE_IOKIT = YES;
 				MODULE_NAME = com.apple.iokit.IONetworkingFamily;
 				MODULE_VERSION = 3.4;
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.iokit.IONetworkingFamily;
 				PRODUCT_NAME = IONetworkingFamily;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1206,20 +1261,21 @@
 		D87CC6E61451BAA800DC37BF /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALLHDRS_COPY_PHASE = YES;
 				INSTALLHDRS_SCRIPT_PHASE = YES;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "InstallHeaders copy";
 				REZ_EXECUTABLE = YES;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1232,17 +1288,18 @@
 		D87CC6E71451BAA800DC37BF /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				INSTALLHDRS_COPY_PHASE = YES;
 				INSTALLHDRS_SCRIPT_PHASE = YES;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "InstallHeaders copy";
 				REZ_EXECUTABLE = YES;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1255,15 +1312,17 @@
 		D87CC6E81451BAA800DC37BF /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				INSTALLHDRS_COPY_PHASE = YES;
 				INSTALLHDRS_SCRIPT_PHASE = YES;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "InstallHeaders copy";
 				REZ_EXECUTABLE = YES;
 				SECTORDER_FLAGS = "";
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1275,13 +1334,22 @@
 		DAD9E1F009D4A8C0006678D2 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1292,25 +1360,36 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-ftrivial-auto-var-init=pattern";
 				SDKROOT = macosx.internal;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 			};
 			name = Development;
 		};
 		DAD9E1F109D4A8C0006678D2 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1320,24 +1399,35 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-ftrivial-auto-var-init=pattern";
 				SDKROOT = macosx.internal;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 			};
 			name = Deployment;
 		};
 		DAD9E1F209D4A8C0006678D2 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1347,11 +1437,13 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-ftrivial-auto-var-init=pattern";
 				SDKROOT = macosx.internal;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "/tmp/${PROJECT_NAME}";
 			};
 			name = Default;
 		};
